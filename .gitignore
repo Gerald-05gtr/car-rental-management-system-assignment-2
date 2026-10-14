@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# C# / .NET
+**/bin/
+**/obj/
+.vs/
+
+# Visual Studio Code
+.vscode/
