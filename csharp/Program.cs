@@ -20,6 +20,7 @@ while (true)
     Console.WriteLine("3. Rent a car");
     Console.WriteLine("4. Return a car");
     Console.WriteLine("5. View rental records");
+    Console.WriteLine("6. View available cars only");
     Console.WriteLine("0. Exit");
     Console.Write("Choose an option: ");
 
