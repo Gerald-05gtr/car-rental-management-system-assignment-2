@@ -78,7 +78,8 @@ def main():
         print("2. Register customer")
         print("3. Rent a car")
         print("4. Return a car")
-        print("5. View rental records")
+        print("5. View rental records") 
+        print("6. View available cars only")
         print("0. Exit")
 
         choice = input("Choose an option: ").strip()
@@ -164,7 +165,28 @@ def main():
                 print(f"Car: {rental.car.brand} {rental.car.model}")
                 print(f"Days: {rental.days}")
                 print(f"Total: {rental.total_cost:.2f} PLN")
-                print(f"Status: {status}")
+                print(f"Status: {status}") 
+                
+
+        elif choice == "6":
+            available_cars = [
+                car for car in cars if car.is_available
+            ]
+
+            if not available_cars:
+                print("No cars are currently available.")
+            else:
+                print("\n=== AVAILABLE CARS ===")
+                for car in available_cars:
+                    car.display_details()
+            if not cars:
+                print("No cars available.")
+                continue
+
+            print("\nAvailable Cars:")
+            for car in cars:
+                if car.is_available:
+                    print(f"- {car.brand} {car.model} (${car.daily_rate:.2f}/day)")
 
         elif choice == "0":
             print("Thank you for using the Car Rental System!")
